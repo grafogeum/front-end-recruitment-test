@@ -119,7 +119,7 @@ gulp.task('scripts', () =>
       .pipe($.sourcemaps.write())
       .pipe(gulp.dest('.tmp/scripts'))
       .pipe($.concat('main.min.js'))
-      .pipe($.uglify({preserveComments: 'some'}))
+      .pipe($.uglify())
       // Output files
       .pipe($.size({title: 'scripts'}))
       .pipe($.sourcemaps.write('.'))
@@ -254,3 +254,13 @@ gulp.task('generate-service-worker', ['copy-sw-scripts'], () => {
 // Load custom tasks from the `tasks` directory
 // Run: `npm install --save-dev require-dir` from the command-line
 // try { require('require-dir')('tasks'); } catch (err) { console.error(err); }
+
+// /////////////////////////////////////////////////////////////////////////////
+// ////////////////////////////// SNOWDOG //////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////////////
+
+const fs = require('fs');
+
+gulp.task('submodule', () => {
+  fs.symlinkSync('../submodule/submodule.html', 'app/submodule.html');
+});
