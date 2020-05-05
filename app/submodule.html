@@ -64,6 +64,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap" rel="stylesheet">
 
   <script src="scripts/moreB.js"></script>
+  <script defer src="scripts/simpleFrontValidator.js"></script>
 
 </head>
 
@@ -104,6 +105,8 @@
         <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
 
           <div class="wrapper" id="checkoutCon">
+
+            <form  action="/" id="form">
               <div class="checkout-cont" id="checkout-box">
                 <div class="checkout-sec1">
 
@@ -116,18 +119,18 @@
                     <div class="col-50">
                       <div class="field">
                         <label for="fname"> First name</label>
-                        <input type="text" value="Elon" >
+                        <input  id="fname" type="text" value="Elon" name="fname" required>
                       </div>
                       <div class="field">
                         <label for="lname"> Last name</label>
-                        <input type="text" value="Mustak" >
+                        <input id="lname" type="text" value="Mustak" name="lname" required>
                       </div>
                     </div>
 
                     <div class="col-100">
                       <div class="field">
-                        <label for="fname"> Email</label>
-                        <input type="text" value="Email" >
+                        <label for="email"> Email</label>
+                        <input required id="email" type="text" value="Email" name="email">
                       </div>
 
                     </div>
@@ -142,8 +145,8 @@
                         </label>
                       </div>
                       <div class="field">
-                        <label for="lname"> Postal Code</label>
-                        <input type="text" value="10001" >
+                        <label for="postCode"> Postal Code</label>
+                        <input id="postCode" type="text" value="10001"  name="postCode">
                       </div>
                     </div>
                   </div>
@@ -159,28 +162,31 @@
                     </div>
                     <div class="col-100">
                       <div class="field">
-                        <label for="fname" style="position:relative"> Credit Card Number                     <i class="fab fa-cc-visa visa-card"></i></label>
-                        <input type="text" value="0000-0000-0000-0000" >
+                        <label for="cardNum" style="position:relative"> Credit Card Number                     <i class="fab fa-cc-visa visa-card"></i></label>
+                        <input required id="cardNum" type="text" value="0000-0000-0000-0000" name="cardNum">
                       </div>
 
                     </div>
                     <div class="col-50">
                       <div class="field">
-                        <label for="fname"> Security code</label>
-                        <input type="text" value="***" >
+                        <label for="seCode"> Security code</label>
+                        <input id="seCode" type="text" value="***" maxlength="3" name="seCode">
                       </div>
                       <div class="field">
                         <label for="expdate">Expiration date</label>
-                        <input type="text" value="MM / YY" >
+                        <input id="expdate" type="text" value="MM / YY" name="expdate">
                       </div>
                     </div>
+                    <div id="error"></div>
                     <div class="col-100">
-                        <p class="btn-cont"><a class='button' href="">Complete Purchase</a></p>
+                        <p class="btn-cont"><input id='button' type="submit" class='button' value="Complete Purchase"></p>
                     </div>
 
                   </div>
+
                 </div>
 
+              </form>
               </div>
           </div>
 
