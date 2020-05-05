@@ -37,5 +37,8 @@
   },
   "eslintConfig": {
     "extends": "google"
+  },
+  "dependencies": {
+    "beautify": "0.0.8"
   }
 }

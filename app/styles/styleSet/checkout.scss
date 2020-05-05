@@ -1,4 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-#moreB {
-  color: aqua;
+//Mixin
+
+@mixin field {
+  width: 100%;
+  background-color: #fff;
+  display: block;
+  border-radius: 5px 5px 0px 0px;
+  padding: 5px 0px 0px 5px;
+}
+
+$bck-color: rgb(226, 226, 226);
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  background-color: $bck-color;
+
+}
+.checkout-sec1{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.details-box {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 15px 20px 70px;
+  background-color: $bck-color;
+}
+
+.checkout-cont {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.personal-info-label {
+  position: relative;
+  width: 100%;
+}
+.personal-info-box {
+  width: 70%;
+  display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+background-color: $bck-color;
+}
+.personal-info-label p {
+  margin-left: 18px;
+  color: #000;
+}
+.personal-info-label p::before {
+content: '❶';
+font-size: 30px;
+color: #000;
+box-sizing: border-box;
+position: absolute;
+left: -30px;
+margin-right: 10px;
+}
+.payments-details-label {
+  width:100%;
+  display: flex;
+  position: relative;
+  color: #000;
+}
+.payments-details-label p {
+  margin-left: 18px;
+}
+.payments-details-label p::before {
+  content: '❷';
+  font-size: 30px;
+  color: #000;
+  box-sizing: border-box;
+  position: absolute;
+  left: -30px;
+  margin-right: 10px;
+  }
+.payments-details-label> p ::after {
+  content:"\f023";
+  font-family: "Font Awesome 5 Free";
+  font-size: 14px;
+  color: rgb(61, 61, 61);
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  box-sizing: border-box;
+  margin-left: 20px;
+  }
+.col-50 {
+  width: 100%;
+  display: flex;
+  justify-content:space-between;
+
+}
+.col-100 {
+  width: 100%;
+}
+.field {
+  padding: 2%;
+  width: 100%;
+}
+.field > label {
+  background-color: #fff;
+  display: block;
+  border-radius: 5px 5px 0px 0px;
+  padding: 5px 0px 0px 5px;
+  font-weight: bold;
+  font-size: 12px;
+}
+input {
+  width:100%;
+  padding: 5px;
+  border:none;
+  border-bottom: 2px solid #c2c2c2;
+  font-size: 18px;
+  color: #838383;
+  border-radius: 0px 0px 5px 5px;
+}
+.select {
+  border: 1px solid #ccc;
+  overflow: hidden;
+  height: 40px;
+  width: 100%;
+  position: relative;
+  display: block;
+  border:0px;
+  outline: none;
+  border-radius: 0px 0px 5px 5px;
+}
+.country-label{
+  border-radius: 5px 5px 5px 5px !important;
+  border-bottom: 2px solid #c2c2c2 !important;
+  height: 100%;
+}
+
+select {
+  height: 35px;
+  border: 0;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 0px 0px 5px 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.select::after {
+  content:"\f107";
+  font-family: "Font Awesome 5 Free";
+  font-size: 20px;
+  // color: #000;
+  position: absolute; right: 10px; top: 35%;
+  z-index: 1;
+  text-align: center;
+  width: 10%;
+  height: 100%;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+.payments-details {
+width: 70%;
+  background-color: $bck-color;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 0px 20px 70px;
+}
+
+.sumary-box {
+  width: 30%;
+  height: 100%;
+  background-color: #6bd400;
+}
+
+.visa-card {
+  color: rgb(18, 1, 117);
+  font-size:25px;
+  position: absolute;
+  right: 15px;
+  top:20px;
+  margin: auto;
+}
+
+.button {
+  @include field();
+  height: 50px;
+  border-radius: 5px;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+ border-bottom: 2px solid #5cb800;
+  background-color: #6bd400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+.button::before {
+  content:"\f07a";
+  font-family: "Font Awesome 5 Free";
+  font-size: 12px;
+  margin-right: 10px;
+}
+.btn-cont {
+  padding: 10px;
+
 }

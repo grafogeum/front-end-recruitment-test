@@ -99,7 +99,7 @@ gulp.task('styles', () => {
     .pipe($.size({title: 'styles'}))
     .pipe($.sourcemaps.write('./'))
     .pipe(gulp.dest('dist/styles'))
-    .pipe(gulp.dest('app/styles/dist'))
+    .pipe(gulp.dest('app/styles'))
     .pipe(gulp.dest('.tmp/styles'));
 });
 
